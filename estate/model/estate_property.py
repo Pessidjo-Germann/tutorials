@@ -1,5 +1,6 @@
 from odoo import fields,models
 from dateutil.relativedelta import relativedelta
+from datetime import date
 class EstateProperty(models.Model):
     _name="estate.property"
     _description= 'This is module to test my work'
