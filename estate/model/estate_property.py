@@ -21,7 +21,15 @@ class EstateProperty(models.Model):
         string='garden orientation',
         selection=[('North','South'),('East','West')]
     ),
-    state=fields.Selection(
-        string='select',
-        selection=[('New','Offer Received','Offer Accepted','Sold ','Canceled')]
-    )
+    state = fields.Selection(
+    selection=[
+        ('new', 'New'),
+        ('offer_received', 'Offer Received'),
+        ('offer_accepted', 'Offer Accepted'),
+        ('sold', 'Sold'),
+        ('canceled', 'Canceled')
+    ],
+    required=True,
+    copy=False,
+    default='new'
+)
