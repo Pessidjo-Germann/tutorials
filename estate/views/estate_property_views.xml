@@ -10,6 +10,7 @@
     <tree string="estate">
         <field name="name"/>
         <field name="postcode"/>
+        <field name="bedrooms">Bedrooms</field>
     </tree>
     </field>
   </record>
