@@ -29,9 +29,6 @@
           <field name="model">estate.property</field>
           <field name="arch" type="xml">
             <form string="estate">
-            <header>
-            <button name="create" type="object"/>
-            </header>
                <sheet>
                 <div class="oe_title">
                         <h1>
@@ -39,17 +36,21 @@
                         </h1>
                     </div>
                </sheet>
-               <sheet>
+               <notebook>
+                <page name="description" string="string">
                 <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Titre de la tâche..."/>
                         </h1>
                     </div>
-               </sheet>
                <group>
                 <field name="postcode" />
                 <field name="bedrooms" />
                </group>
+                  
+                </page>
+               </notebook>
+            
             </form>
           </field>
 </record>
