@@ -1,4 +1,7 @@
-<record id="estate_property_type_view_tree" model="ir.ui.view">
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="estate_property_type_view_tree" model="ir.ui.view">
     <field name="name">estate.property.type.view.tree</field>
     <field name="model">estate.property.type</field>
     <field name="arch" type="xml">
@@ -18,3 +21,5 @@
     id="estate_property_type_menu"
     name="name"
     sequence="10"/>
+
+</odoo>
