@@ -1,5 +1,15 @@
 <odoo>
-  
+  <record id="estate_property_action" model="ir.actions.act_window">
+    <field name="name">test estate</field>
+    <field name="res_model">estate.property</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+          <p class="o_view_nocontent_create">
+            Cliquez ici pour créer votre première tâche.
+          </p>
+    </field>
+    <field name="search_view_id" ref="estate_property_view_search"/>
+  </record>
   <record id="estate_property_view_tree" model="ir.ui.view">
     <field name="model">estate.property</field>
      <field name="arch" type="xml">
@@ -80,15 +90,5 @@
   </field>
 </record>
 
-<record id="estate_property_action" model="ir.actions.act_window">
-    <field name="name">test estate</field>
-    <field name="res_model">estate.property</field>
-    <field name="view_mode">tree,form</field>
-    <field name="help" type="html">
-          <p class="o_view_nocontent_create">
-            Cliquez ici pour créer votre première tâche.
-          </p>
-    </field>
-    <field name="search_view_id" ref="estate_property_view_search"/>
-  </record>
+
 </odoo>
