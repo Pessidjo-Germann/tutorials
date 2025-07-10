@@ -23,6 +23,7 @@ class EstateProperty(models.Model):
         selection=[('North','South'),('East','West')]
     ),
     property_type_id=fields.Many2one("estate.property.type",string="property")
+    tag_ids=fields.Many2many("estate.property.tag",string="Tag")
     user_id = fields.Many2one('res.users', string='Salesperson', index=True, tracking=True, default=lambda self: self.env.user)
     seller_id=fields.Many2one('res.partner',string='Buyer')
     state = fields.Selection(

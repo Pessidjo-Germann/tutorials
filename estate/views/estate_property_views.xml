@@ -29,6 +29,7 @@
         <field name="arch" type="xml">
             <form string="Estate Property">
                <sheet>
+                    <field name="country_ids" widget="many2many_tags"/>
                    <div class="oe_title">
                        <h1><field name="name" placeholder="Ex: Villa sur la côte"/></h1>
                    </div>
