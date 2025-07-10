@@ -35,10 +35,10 @@
                             <field name="name" readonly="True" placeholder="Titre de la tâche..."/>
                         </h1>
                 </div>
-                <newline>
+                <group>
                     <h2><field name="postcode" readonly="True" /></h2>
                 <field name="date_availability" readonly="True" string="Availabe From"/>
-                </newline>
+                </group>
                
                <notebook>
                 <page name="description" string="Description">
