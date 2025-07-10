@@ -37,14 +37,11 @@
                     </div>
                <notebook>
                 <page name="description" string="string">
-                <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="Titre de la tâche..."/>
-                        </h1>
-                </div>
                <group>
-                <field name="postcode" />
-                <field name="bedrooms" />
+                <field name="postcode" readonly="True" />
+                <field name="bedrooms" readonly="True"/>
+                <field name="description" readonly="True">descriptionr</field>
+
                </group>
                   
                 </page>
