@@ -22,6 +22,7 @@ class EstateProperty(models.Model):
         string='garden orientation',
         selection=[('North','South'),('East','West')]
     ),
+    property_type_id=fields.Many2one("estate.property.type",string="property")
     state = fields.Selection(
     selection=[
         ('new', 'New'),
