@@ -1,94 +1,102 @@
 <odoo>
-  <record id="estate_property_action" model="ir.actions.act_window">
-    <field name="name">test estate</field>
-    <field name="res_model">estate.property</field>
-    <field name="view_mode">tree,form</field>
-    <field name="help" type="html">
-          <p class="o_view_nocontent_create">
-            Cliquez ici pour créer votre première tâche.
-          </p>
-    </field>
-    <field name="search_view_id" ref="estate_property_view_search"/>
-  </record>
-  <record id="estate_property_view_tree" model="ir.ui.view">
-    <field name="model">estate.property</field>
-     <field name="arch" type="xml">
-    <tree string="estate">
-        <field name="name"/>
-        <field name="postcode"/>
-        <field name="bedrooms"/>
-        <field name="living_area" string="Living Area(sqm)"/>
-        <field name="expected_price"/>
-        <field name="selling_price"/>
-        <field name="date_availability" string="Availabe From"/> 
-    </tree>
-    </field>
-  </record>
 
-<record id="estate_property_view_form" model="ir.ui.view">
-          <field name="name">estate_property.view.form</field>
-          <field name="model">estate.property</field>
-          <field name="arch" type="xml">
-            <form string="estate">
+    <!-- ====================================================== -->
+    <!--          1. LES VUES (LES CADRES)                      -->
+    <!-- ====================================================== -->
+
+    <!-- Vue Liste -->
+    <record id="estate_property_view_tree" model="ir.ui.view">
+        <!-- On ajoute un <field name="name"> pour la clarté -->
+        <field name="name">estate.property.tree</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <tree string="Estate Properties">
+                <field name="name"/>
+                <field name="postcode"/>
+                <field name="bedrooms"/>
+                <field name="living_area" string="Living Area (sqm)"/>
+                <field name="expected_price"/>
+                <field name="selling_price"/>
+                <field name="date_availability"/> 
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue Formulaire (nettoyée) -->
+    <record id="estate_property_view_form" model="ir.ui.view">
+        <field name="name">estate.property.form</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form string="Estate Property">
                <sheet>
-                <div class="oe_title">
-                        <h1>
-                            <field name="name" readonly="True" placeholder="Titre de la tâche..."/>
-                        </h1>
-                </div>
-                <group>
-                    <h2><field name="postcode" readonly="True" /></h2>
-                <field name="date_availability" readonly="True" string="Availabe From"/>
-                </group>
-               
-               <notebook>
-                <page name="description" string="Description">
-               <group>
-                <field name="description" readonly="True">descriptionr</field>
-                <field name="postcode" readonly="True" />
-                <field name="bedrooms" readonly="True"/>
-                <field name="living_area" readonly="True" string="Living Area(sqm)"/>
-                <field name="expected_price" readonly="True"/>
-                <field name="selling_price" readonly="True"/>
-                <field name="date_availability" readonly="True" string="Availabe From"/>
-                <field name="garage" readonly="True"/>
-                <field name="garden" readonly="True"/>
-               </group>
-                  
-                </page>
-               </notebook>
-            
+                   <div class="oe_title">
+                       <h1><field name="name" placeholder="Ex: Villa sur la côte"/></h1>
+                   </div>
+                   <group>
+                        <group>
+                            <field name="postcode"/>
+                            <field name="date_availability"/>
+                        </group>
+                        <group>
+                            <field name="expected_price"/>
+                            <field name="selling_price"/>
+                        </group>
+                   </group>
+                   <notebook>
+                       <page string="Description">
+                           <group>
+                               <field name="description"/>
+                               <field name="bedrooms"/>
+                               <field name="living_area" string="Living Area (sqm)"/>
+                           </group>
+                           <group>
+                               <field name="garage"/>
+                               <field name="garden"/>
+                           </group>
+                       </page>
+                   </notebook>
                </sheet>
             </form>
-          </field>
-</record>
+        </field>
+    </record>
 
-<record id="action_estate_form_view" model="ir.actions.act_window.view">
-  <field name="act_window_id" ref="estate_property_action"/>
-  <field name="view_mode">form</field>
-  <field name="view_id" ref="estate_property_view_form"/>
-  <field name="sequence">2</field>
-</record>
+    <!-- Vue Recherche -->
+    <record id="estate_property_view_search" model="ir.ui.view">
+        <field name="name">estate.property.search</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Title"/>
+                <field name="postcode"/>
+                <field name="expected_price"/>
+                <field name="bedrooms"/>
+            </search>
+        </field>
+    </record>
 
-<record id="action_estate_tree_view" model="ir.actions.act_window.view">
-  <field name="act_window_id" ref="estate_property_action"/>
-  <field name="view_mode">tree</field>
-  <field name="view_id" ref="estate_property_view_tree"/>
-  <field name="sequence">1</field>
-</record>
 
-<record id="estate_property_view_search" model="ir.ui.view">
-  <field name="name">estate_property.view.search</field>
-  <field name="model">estate.property</field>
-  <field name="arch" type="xml">
-    <search >
-      <field name="postcode" />
-      <field name="name" string="title" />
-      <field name="expected_price" />
-      <field name="bedrooms" />
-    </search>
-  </field>
-</record>
+    <!-- ====================================================== -->
+    <!--          2. L'ACTION (LE PANNEAU INDICATEUR)           -->
+    <!--          ON LA DÉCLARE AVANT LES LIENS QUI L'UTILISENT -->
+    <!-- ====================================================== -->
+    <record id="estate_property_action" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+        <!-- On lie directement la vue de recherche ici, c'est plus simple -->
+        <field name="search_view_id" ref="estate_property_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_create">
+                Click here to create your first property.
+            </p>
+        </field>
+    </record>
 
+    <!-- Plus besoin des ir.actions.act_window.view car Odoo saura trouver
+         les vues tree et form grâce à leur champ "model".
+         On les garde si on veut un contrôle absolu ou si on a plusieurs vues
+         du même type pour le même modèle.
+         Pour l'apprentissage, c'est bien de les avoir écrites,
+         mais dans ce cas simple, elles sont optionnelles. -->
 
 </odoo>
