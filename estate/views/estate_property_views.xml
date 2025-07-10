@@ -71,7 +71,7 @@
             <filter name="filter_by_expected_price" string="Expected Price" />
             <filter name="filter_by_bedrooms" string="Bedrooms" />
             <filter name="filter_by_living_area" string="Living Area (sqm)" />
-            <filter name="filter_by_state" string="State" domain=[('state','=','New'),('state','=','Offer Received')] />
+            <filter name="filter_by_state" string="State" domain=['|',('state','=','New'),('state','=','Offer Received')] />
             
             <group expand="0" string="Grouper Par">
                 <filter name="group_by_postcode" 
