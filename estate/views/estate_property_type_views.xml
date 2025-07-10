@@ -12,14 +12,9 @@
 </record>
 
 <record id="estate_property_type_action" model="ir.actions.act_window">
-    <field name="name">Properties</field>
+    <field name="name">Property Types</field>
      <field name="res_model">estate.property.type</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form</field>
 </record>
-
-<menuitem
-    id="estate_property_type_menu"
-    name="name"
-    sequence="10"/>
-
+ 
 </odoo>
