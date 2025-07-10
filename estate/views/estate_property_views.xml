@@ -32,16 +32,19 @@
                <sheet>
                 <div class="oe_title">
                         <h1>
-                            <field name="name" placeholder="Titre de la tâche..."/>
+                            <field name="name" readonly="True" placeholder="Titre de la tâche..."/>
                         </h1>
                     </div>
                <notebook>
                 <page name="description" string="string">
                <group>
+                <field name="description" readonly="True">descriptionr</field>
                 <field name="postcode" readonly="True" />
                 <field name="bedrooms" readonly="True"/>
-                <field name="description" readonly="True">descriptionr</field>
-
+                <field name="living_area" readonly="True" string="Living Area(sqm)"/>
+        <field name="expected_price" readonly="True"/>
+        <field name="selling_price" readonly="True"/>
+        <field name="date_availability" readonly="True" string="Availabe From"/> 
                </group>
                   
                 </page>
