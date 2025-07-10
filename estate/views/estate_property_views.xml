@@ -89,6 +89,6 @@
             Cliquez ici pour créer votre première tâche.
           </p>
     </field>
-    <field name="search_name_id" ref="estate_property_view_search"/>
+    <field name="search_view_id" ref="estate_property_view_search"/>
   </record>
 </odoo>
