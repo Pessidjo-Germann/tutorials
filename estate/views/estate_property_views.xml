@@ -18,11 +18,11 @@
                 <field name="expected_price"/>
                 <field name="selling_price"/>
                 <field name="date_availability"/> 
+                <field name="property_type_id" string="Type de propriete" />
             </tree>
         </field>
     </record>
 
-    <!-- Vue Formulaire (nettoyée) -->
     <record id="estate_property_view_form" model="ir.ui.view">
         <field name="name">estate.property.form</field>
         <field name="model">estate.property</field>
@@ -53,6 +53,7 @@
                                <field name="garage"/>
                                <field name="garden"/>
                                <field name="state" />
+                                <field name="property_type_id" />
                            </group>
                        </page>
                    </notebook>
@@ -72,6 +73,7 @@
             <filter name="filter_by_expected_price" string="Expected Price" />
             <filter name="filter_by_bedrooms" string="Bedrooms" />
             <filter name="filter_by_living_area" string="Living Area (sqm)" />
+            <filter name="filter_by_property_type_id" string="filter_by_property_type_id" domain="[('property_type_id', '=', 'value')]" context="{'group_by': 'property_type_id'}" />
             <filter name="filter_by_state" string="State" domain="['|',('state','=','new'),('state','=','offer_received')]"/>
             
             <group expand="0" string="Grouper Par">
@@ -101,11 +103,6 @@
         </field>
     </record>
 
-    <!-- Plus besoin des ir.actions.act_window.view car Odoo saura trouver
-         les vues tree et form grâce à leur champ "model".
-         On les garde si on veut un contrôle absolu ou si on a plusieurs vues
-         du même type pour le même modèle.
-         Pour l'apprentissage, c'est bien de les avoir écrites,
-         mais dans ce cas simple, elles sont optionnelles. -->
+   
 
 </odoo>
