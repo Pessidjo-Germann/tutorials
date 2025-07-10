@@ -36,8 +36,12 @@
                         </h1>
                 </div>
                 <newline>
-                     <field name="postcode" readonly="True" />
-                <field name="bedrooms" readonly="True"/>
+                    <h2><field name="postcode" readonly="True" /></h2>
+                <field name="date_availability" readonly="True" string="Availabe From"/>
+                </newline>
+                <newline>
+                <field name="expected_price" readonly="True"/>
+                <field name="selling_price" readonly="True"/>
                 </newline>
                <notebook>
                 <page name="description" string="Description">
