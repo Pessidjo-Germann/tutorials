@@ -51,7 +51,7 @@
                 <field name="selling_price" readonly="True"/>
                 <field name="date_availability" readonly="True" string="Availabe From"/>
                 <field name="garage" readonly="True"/>
-                <field name="graden" readonly="True"/>
+                <field name="garden" readonly="True"/>
                </group>
                   
                 </page>
