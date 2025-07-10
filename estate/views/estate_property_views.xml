@@ -49,7 +49,9 @@
                 <field name="living_area" readonly="True" string="Living Area(sqm)"/>
                 <field name="expected_price" readonly="True"/>
                 <field name="selling_price" readonly="True"/>
-                <field name="date_availability" readonly="True" string="Availabe From"/> 
+                <field name="date_availability" readonly="True" string="Availabe From"/>
+                <field name="garage" readonly="True"/>
+                <field name="graden" readonly="True"/>
                </group>
                   
                 </page>
