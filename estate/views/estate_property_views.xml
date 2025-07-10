@@ -66,15 +66,14 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <search>
+            <field name="name" string="Title"
+                   filter_domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]"/>
              <filter name="filter_by_postcode" string="Postcode" domain="[('postcode', 'ilike', self)]"/>
             <filter name="filter_by_expected_price" string="Expected Price" domain="[('expected_price', '=', self)]"/>
             <filter name="filter_by_bedrooms" string="Bedrooms" domain="[('bedrooms', '=', self)]"/>
             <filter name="filter_by_living_area" string="Living Area (sqm)" domain="[('living_area', '=', self)]"/>
             <filter name="filter_by_facades" string="Facades" domain="[('facades', '=', self)]"/>
-                <field name="name" string="Title"/>
-                <field name="postcode"/>
-                <field name="expected_price"/>
-                <field name="bedrooms"/>
+               
             </search>
         </field>
     </record>
