@@ -53,5 +53,11 @@
   <field name="view_id" ref="estate_property_view_tree"/>
   <field name="sequence">1</field>
 </record>
+ <menuitem id="menu_tasks_root" name="Gestionnaire"/>
 
+     <menuitem id="menu_simple_task_list"
+              name="Toutes les Tâches"
+              parent="menu_tasks_root"
+              action="estate_property_action"
+              sequence="10"/>
 </odoo>
