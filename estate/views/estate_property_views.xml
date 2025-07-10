@@ -35,14 +35,13 @@
                             <field name="name" placeholder="Titre de la tâche..."/>
                         </h1>
                     </div>
-               </sheet>
                <notebook>
                 <page name="description" string="string">
                 <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Titre de la tâche..."/>
                         </h1>
-                    </div>
+                </div>
                <group>
                 <field name="postcode" />
                 <field name="bedrooms" />
@@ -51,6 +50,7 @@
                 </page>
                </notebook>
             
+               </sheet>
             </form>
           </field>
 </record>
