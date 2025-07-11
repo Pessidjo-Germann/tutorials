@@ -38,3 +38,4 @@ class EstateProperty(models.Model):
     copy=False,
     default='new'
 )
+    offer_ids=fields.One2many("estate.property.offer","property_id",string='Offer')
