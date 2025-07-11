@@ -64,6 +64,12 @@
                    </group>
                </group>
            </page>
+           <page string="Offers">
+              <group>
+                <field name="status" />
+                <field name="pathner_id"  />
+              </group>
+            </page>
             <page string="Other info">
               <group>
                 <field name="user_id" />
