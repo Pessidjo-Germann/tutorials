@@ -60,6 +60,7 @@
                    <group>
                        <field name="garage"/>
                        <field name="garden"/>
+                       <field name="total_area" string="Total Area" />
                 <field name="property_type_id" /> <!-- Déplacé ici pour la logique -->
                    </group>
                </group>

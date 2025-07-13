@@ -39,3 +39,11 @@ class EstateProperty(models.Model):
     default='new'
 )
     offer_ids=fields.One2many("estate.property.offer","property_id",string='Offer')
+    total_area=fields.Float("_area_total")
+    
+    @api.depends("amount")
+    def _area_total(self):
+        for record in self:
+            record.total_area=record.garden_area+record.living_area
+            
+            
